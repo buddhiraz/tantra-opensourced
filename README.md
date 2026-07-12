@@ -9,10 +9,26 @@ sadhana — written as a study paper with visual diagrams throughout.
 > especially mantra initiation (*diksha*) or kundalini work — seek a qualified guru in a living
 > lineage.
 
+## 🌐 Interactive website
+
+An animated, 3D scrollytelling companion to the guide lives in [`docs/`](./docs) and deploys
+straight to **GitHub Pages** (no build step — plain HTML/CSS/JS with Three.js via CDN):
+
+**→ https://buddhiraz.github.io/tantra-opensourced/**
+
+It covers non-duality, Shiva & Shakti, the Ten Mahavidyas (interactive), an animated **Sri Yantra**,
+the five **koshas** as an Apple-style peel-back scroll experience, the seven **chakras** as an
+interactive 3D column with a kundalini-rising animation, the seed (**bija**) mantras with audio, and
+the goal of Tantra.
+
+> **Enabling Pages:** repo **Settings → Pages → Build and deployment → Source: “Deploy from a branch” →
+> Branch: `main`, folder `/docs` → Save.** The URL above goes live in ~1 minute.
+
 ## Contents
 
 | File | What it is |
 |------|-----------|
+| **[`docs/`](./docs)** | The interactive website (deployed to GitHub Pages) |
 | **[`TANTRA-A-SYSTEMATIC-GUIDE.md`](./TANTRA-A-SYSTEMATIC-GUIDE.md)** | The main guide — ~6,000 words, 20 sections, 25 Mermaid diagrams |
 | **[`RAW-RESEARCH-NOTES.md`](./RAW-RESEARCH-NOTES.md)** | Raw research notes: source excerpts + all reference links |
 

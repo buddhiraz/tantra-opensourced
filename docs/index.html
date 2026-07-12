@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tantra · The Weave of Consciousness — an interactive guide</title>
+<meta name="description" content="An interactive, animated guide to Tantra: non-duality, Shiva & Shakti, the Ten Mahavidyas, the Sri Yantra, the five koshas, the seven chakras, kundalini, and the goal of Tantra." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%95%89%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ░░ Loading veil ░░ -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-bindu"></div>
+  <p class="loader-text">तन्त्र</p>
+</div>
+
+<!-- ░░ Scroll progress ░░ -->
+<div id="progress-bar" aria-hidden="true"></div>
+
+<!-- ░░ Top navigation ░░ -->
+<header id="topnav">
+  <a class="brand" href="#hero">🕉️ <span>Tantra</span></a>
+  <nav aria-label="Sections">
+    <a href="#meaning">Meaning</a>
+    <a href="#shiva-shakti">Shiva·Shakti</a>
+    <a href="#mahavidyas">Mahavidyas</a>
+    <a href="#sriyantra">Sri Yantra</a>
+    <a href="#koshas">Koshas</a>
+    <a href="#chakras">Chakras</a>
+    <a href="#goal">The Goal</a>
+    <a href="#path">Path</a>
+  </nav>
+  <button id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+</header>
+
+<!-- ░░ Section dots ░░ -->
+<nav id="dots" aria-label="Jump to section"></nav>
+
+<main>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section id="hero" class="full">
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <p class="devanagari huge-devanagari reveal">तन्त्र</p>
+      <h1 class="reveal">TANTRA</h1>
+      <p class="tagline reveal">The weave of Consciousness and Energy —<br />a technology for becoming free <em>while fully alive</em>.</p>
+      <p class="hero-sub reveal">Non-duality · Shiva &amp; Shakti · the Ten Mahavidyas · the Sri Yantra · the five koshas · the seven chakras · kundalini · the goal of liberation.</p>
+      <a class="scroll-cue reveal" href="#meaning" aria-label="Begin">Begin the descent inward <span>↓</span></a>
+    </div>
+  </section>
+
+  <!-- ══════════ NON-DUALITY / MEANING ══════════ -->
+  <section id="meaning" class="pad">
+    <div class="wrap narrow">
+      <p class="eyebrow reveal">The one idea beneath everything</p>
+      <h2 class="reveal">Not two.</h2>
+      <p class="lead reveal">
+        Tantra begins with a single recognition: reality is <strong>not two</strong>. What appears as
+        countless separate things — you, the world, the sacred, the ordinary — is one undivided
+        reality seeing itself from inside. The Sanskrit word says it plainly:
+      </p>
+
+      <div class="etymology reveal">
+        <div class="ety-part"><span class="dev">तन्</span><strong>tan</strong><em>to stretch · weave · expand</em></div>
+        <div class="ety-plus">+</div>
+        <div class="ety-part"><span class="dev">त्र</span><strong>tra</strong><em>instrument · to protect</em></div>
+        <div class="ety-eq">=</div>
+        <div class="ety-part ety-result"><span class="dev">तन्त्र</span><strong>tantra</strong><em>the loom that expands &amp; frees consciousness</em></div>
+      </div>
+
+      <p class="lead reveal">
+        So Tantra is not a religion but a <strong>method</strong> — a woven framework of theory and
+        practice for realizing the divine <em>within</em> embodied life, not by escaping it. Its wager
+        is radical: <span class="hl">the body, the senses, the world, even desire</span> are not
+        obstacles to liberation. They are the raw material of it.
+      </p>
+
+      <blockquote class="reveal">
+        You are already the union of Consciousness (Shiva) and Energy (Shakti).
+        Practice is the patient work of <em>realizing</em> what is already true.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ══════════ CORE PRINCIPLES ══════════ -->
+  <section id="principles" class="pad alt">
+    <div class="wrap">
+      <p class="eyebrow reveal">The working axioms</p>
+      <h2 class="reveal">Eight principles</h2>
+      <p class="lead center reveal">The "laws of physics" of the tradition. Everything else is application.</p>
+      <div class="cards" id="principle-cards"></div>
+    </div>
+  </section>
+
+  <!-- ══════════ SHIVA & SHAKTI ══════════ -->
+  <section id="shiva-shakti" class="pad">
+    <div class="wrap">
+      <p class="eyebrow reveal">The two-in-one</p>
+      <h2 class="reveal">Shiva &amp; Shakti</h2>
+      <div class="duality">
+        <div class="duo shiva reveal">
+          <span class="dev">शिव</span>
+          <h3>Shiva</h3>
+          <p class="duo-role">Pure Consciousness</p>
+          <ul>
+            <li>The still, silent witness</li>
+            <li>Being · the "I" (<em>aham</em>)</li>
+            <li>The unmoving ground, the <em>bindu</em></li>
+          </ul>
+        </div>
+        <div class="duo-union reveal" aria-hidden="true">
+          <div class="union-orb"></div>
+          <p>eternal union<br /><small>like fire &amp; its heat</small></p>
+        </div>
+        <div class="duo shakti reveal">
+          <span class="dev">शक्ति</span>
+          <h3>Shakti</h3>
+          <p class="duo-role">Power &amp; Energy</p>
+          <ul>
+            <li>The dynamic creator</li>
+            <li>Becoming · the "This" (<em>idam</em>)</li>
+            <li>The living vibration, the <em>spanda</em></li>
+          </ul>
+        </div>
+      </div>
+      <p class="lead center reveal">
+        <span class="hl">"Shiva without Shakti is <em>shava</em> — a corpse."</span>
+        Consciousness without its own power cannot act, know, or will; power without consciousness has
+        no ground. They are <strong>not two</strong> — like a word and its meaning. The entire path is
+        to realize this union in oneself.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ SOURCES / FAMILIES ══════════ -->
+  <section id="families" class="pad alt">
+    <div class="wrap">
+      <p class="eyebrow reveal">Origins &amp; lineages</p>
+      <h2 class="reveal">Where Tantra comes from</h2>
+      <p class="lead reveal">
+        Tantric scriptures are cast as an intimate dialogue between Shiva and Shakti. When
+        <strong>Shiva teaches</strong>, the text is <em>Āgama</em>; when <strong>Shakti teaches</strong>,
+        it is <em>Nigama</em>. From this canon flow two great Goddess-families — the same summit
+        approached through two temperaments.
+      </p>
+      <div class="families">
+        <div class="fam kali reveal">
+          <h3>Kali Kula</h3>
+          <p class="fam-sub">Northern · Kashmir · the <em>Krama</em></p>
+          <p>Goddess: <strong>Kali</strong> — time, death, fierce dissolution. Reality read as a cycle:
+          emission → maintenance → withdrawal → the nameless fourth. For seekers drawn to radical
+          ego-loss and the deathless awareness that remains.</p>
+        </div>
+        <div class="fam shri reveal">
+          <h3>Shri Kula</h3>
+          <p class="fam-sub">Southern · the <em>Shri Vidya</em></p>
+          <p>Goddess: <strong>Lalita Tripura Sundari</strong> — beauty, grace, cosmic order. Worshipped
+          through the <strong>Sri Chakra</strong>. The refined, serene path of harmony — granting both
+          worldly fulfilment <em>and</em> liberation through a single mantra.</p>
+        </div>
+      </div>
+      <p class="note reveal">Both are <em>Kaula</em> at root — using body, senses, and the world as the path rather than renouncing them — and both aim at the same non-dual realization.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ MAHAVIDYAS ══════════ -->
+  <section id="mahavidyas" class="pad">
+    <div class="wrap">
+      <p class="eyebrow reveal">Dasha Mahavidya · the Ten Great Wisdoms</p>
+      <h2 class="reveal">The ten faces of the Goddess</h2>
+      <p class="lead center reveal">
+        Devi is the Absolute in feminine form. The Ten Mahavidyas map the <em>full spectrum</em> of
+        reality — beauty and terror, abundance and the void. Every face of experience, even loss and
+        death, is a door home. <span class="hl">Tap a face to enter it.</span>
+      </p>
+      <div class="mahavidya-grid" id="mahavidya-grid"></div>
+    </div>
+    <div id="mahavidya-modal" class="modal" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mv-name">
+        <button class="modal-close" aria-label="Close">×</button>
+        <span class="mv-dev dev" id="mv-dev"></span>
+        <h3 id="mv-name"></h3>
+        <p class="mv-title" id="mv-title"></p>
+        <p class="mv-essence" id="mv-essence"></p>
+        <div class="mv-meta" id="mv-meta"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SRI YANTRA ══════════ -->
+  <section id="sriyantra" class="full split">
+    <div class="split-viz">
+      <div id="sriyantra-mount" aria-label="Animated Sri Yantra"></div>
+    </div>
+    <div class="split-text">
+      <p class="eyebrow reveal">Shri Vidya · the cosmic diagram</p>
+      <h2 class="reveal">The Sri Yantra</h2>
+      <p class="lead reveal">
+        Nine interlocking triangles — <strong>four pointing up</strong> (Shiva),
+        <strong>five pointing down</strong> (Shakti) — nested in lotus rings and gates, radiating from
+        a central point, the <em>bindu</em>.
+      </p>
+      <p class="lead reveal">
+        It is at once the map of the whole cosmos <em>and</em> of the human body and mind —
+        <span class="dev">यथा पिण्डे तथा ब्रह्माण्डे</span> <em>"as in the body, so in the universe."</em>
+        The Goddess resides in the bindu; creation unfolds outward, and realization retraces the path
+        inward — back to the center.
+      </p>
+      <ul class="tick reveal">
+        <li>Outer square (<em>bhupura</em>) — the gates, the world</li>
+        <li>Lotus rings — 16 &amp; 8 petals</li>
+        <li>Nine triangles — the union of Shiva &amp; Shakti</li>
+        <li>The bindu — where Tripura Sundari resides</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ KOSHAS · scroll-driven peel ══════════ -->
+  <section id="koshas" aria-label="The five koshas">
+    <div class="kosha-sticky">
+      <div class="kosha-stage">
+        <div id="koshas-mount" aria-hidden="true"></div>
+        <div class="kosha-rail" id="kosha-rail" aria-hidden="true"></div>
+      </div>
+      <div class="kosha-copy">
+        <p class="eyebrow">Pancha Kosha · the five sheaths</p>
+        <h2>The layers of a human&nbsp;being</h2>
+        <p class="kosha-intro">Scroll to peel back each sheath — from the physical body inward to the Self.</p>
+        <div class="kosha-cards" id="kosha-cards"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CHAKRAS ══════════ -->
+  <section id="chakras" class="full split">
+    <div class="split-viz">
+      <div id="chakra-mount" aria-label="The seven chakras along the spine"></div>
+      <button id="kundalini-btn" class="ghost-btn">▲ Rouse the kundalini</button>
+    </div>
+    <div class="split-text">
+      <p class="eyebrow reveal">The subtle body</p>
+      <h2 class="reveal">The seven chakras</h2>
+      <p class="lead reveal">
+        Along the central channel (<em>sushumna</em>) sit seven whirling wheels where the energy
+        channels converge — each a lotus with its own element, seed-sound (<em>bija</em>), and faculty.
+        <span class="hl">Tap a chakra to open it.</span>
+      </p>
+      <div id="chakra-detail" class="chakra-detail">
+        <p class="cd-hint">Select a chakra from the column →</p>
+      </div>
+      <p class="warn reveal">⚠ Kundalini — the coiled Shakti asleep at the base — rises through these centres to reunite with Shiva at the crown. Classical texts are emphatic: never force it. Premature rousing is <em>"a loaded firearm in the hands of a child."</em></p>
+    </div>
+  </section>
+
+  <!-- ══════════ MANTRA ══════════ -->
+  <section id="mantra" class="pad alt">
+    <div class="wrap">
+      <p class="eyebrow reveal">Sound as power</p>
+      <h2 class="reveal">Mantra &amp; the seed sounds</h2>
+      <p class="lead center reveal">
+        Reality is vibration (<em>spanda</em>). A mantra is not a symbol — it is a vibrational form of
+        Shakti. A <strong>bija</strong> ("seed") condenses an entire energy into a single syllable, as
+        a seed contains the whole tree. <span class="hl">Tap a seed to hear its tone.</span>
+      </p>
+      <div class="bija-grid" id="bija-grid"></div>
+      <p class="note reveal">A <em>sadhana</em> mantra is meant to be received through initiation (<em>diksha</em>) from a teacher, who transmits not just syllables but a living charge. These seeds are for understanding; open names like <em>Om Namah Shivaya</em> are widely considered safe for open practice.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ GOAL ══════════ -->
+  <section id="goal" class="pad">
+    <div class="wrap narrow">
+      <p class="eyebrow reveal">Bhukti &amp; Mukti</p>
+      <h2 class="reveal">The goal of Tantra</h2>
+      <p class="lead reveal">
+        Here Tantra states its boldest claim. Where ascetic paths demand you renounce the world to be
+        free, Shakta Tantra promises <strong>both</strong>:
+      </p>
+      <div class="goal-pair">
+        <div class="goal-half reveal">
+          <span class="dev">भुक्ति</span>
+          <h3>Bhukti</h3>
+          <p>Enjoyment &amp; mastery <em>within</em> the world. If the world is Shakti's own body, then
+          rightly engaged — consciously, offered to the Divine — <em>bhoga becomes yoga</em>.</p>
+        </div>
+        <div class="goal-half reveal">
+          <span class="dev">मुक्ति</span>
+          <h3>Mukti</h3>
+          <p>Liberation <em>from</em> bondage. Not postponed to after death — the illusion "I am not yet
+          free" is itself the only bondage, and its removal <em>is</em> freedom.</p>
+        </div>
+      </div>
+      <blockquote class="reveal big">
+        The goal of Tantra is to realize your identity with the undivided Shiva–Shakti —
+        fully alive, fully embodied, fully free — so that living itself becomes liberation.
+      </blockquote>
+      <p class="lead center reveal">This is <strong>jivanmukti</strong> — liberation while living. In Kashmir Shaivism it is called <em>pratyabhijñā</em>: <span class="hl">recognition</span>. Nothing is added; an error is simply undone. You were always Shiva.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ PATH / ROADMAP ══════════ -->
+  <section id="path" class="pad alt">
+    <div class="wrap">
+      <p class="eyebrow reveal">A beginner's roadmap</p>
+      <h2 class="reveal">A sane, safe sequence</h2>
+      <p class="lead center reveal">No forcing, no shortcuts. Patience, humility, and steadiness are the real attainments.</p>
+      <ol class="roadmap" id="roadmap"></ol>
+      <div class="disclaimer reveal">
+        <strong>Educational &amp; descriptive.</strong> This is a study map synthesising widely available
+        classical teachings and secondary scholarship — not a substitute for a living teacher. Details
+        (mantra syllables, counts, attributions) vary across lineages. For any actual practice —
+        especially mantra initiation or kundalini work — seek a qualified guru in a living lineage.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Built as an open, educational companion to <a href="https://github.com/buddhiraz/tantra-opensourced/blob/main/TANTRA-A-SYSTEMATIC-GUIDE.md">Tantra: A Systematic Guide</a>.</p>
+  <p class="foot-dev">॥ शिवशक्त्यैक्यरूपिणी ॥</p>
+  <p class="foot-small">Released for open, educational use. A map, not a manual.</p>
+</footer>
+
+<script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
